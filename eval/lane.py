@@ -25,6 +25,8 @@ class LaneEval(object):
         # gt = [x_gts]
         angles = [LaneEval.get_angle(x_gts, y_samples) for x_gts in gt]
         threshs = [LaneEval.thresh / np.cos(angle) for angle in angles]
-        line_accs = [LaneEval.line_accuracy(x_preds, x_gts, thresh)
-                     for x_preds, x_gts, thresh in zip(pred, gt, threshs)]
+        line_accs = []
+        for x_gts, thresh in zip(pred, gt, threshs):
+            accs = [LaneEval.line_accuracy(x_preds, x_gts, thresh) for x_preds in pred]
+            line_accs.append(np.max(accs))
         return np.mean(line_accs)
