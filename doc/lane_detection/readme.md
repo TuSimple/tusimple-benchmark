@@ -66,7 +66,11 @@ __Format__
 The list of four lanes contains semantic meaning, positions compared to the car. We encourage you to predict lanes with the same semantic order, however, we do not evaluate the order nowadays. You can put the most confident four lines of lane markings in a list with any order as the value of 'lanes'.
 
 The evaluation formula:
-$$\frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$
-where $C_{clip}$ is the number of correct points in the last frame of the `clip`, $S_{clip}$ is the number of requested points in the last frame of the `clip`. If the difference between the width of ground-truth and prediction is less than a threshold, the predicted point is a correct one. If you some point is out of view or there is no lane markings of some specific `h_sample`, just record the detection as `-100`. We will evaluate the values of all heights in `h_sample`.
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$\frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
+where
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$C_{clip}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$C_{clip}$" title="$C_{clip}$" /></a>
+ is the number of correct points in the last frame of the `clip`,
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$S_{clip}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$S_{clip}$" title="$S_{clip}$" /></a>
+ is the number of requested points in the last frame of the `clip`. If the difference between the width of ground-truth and prediction is less than a threshold, the predicted point is a correct one. If you some point is out of view or there is no lane markings of some specific `h_sample`, just record the detection as `-100`. We will evaluate the values of all heights in `h_sample`.
 
 We do not release testing dataset at present, you can split the label data to training/validation/testing datasets. You are supposed to predict 'lanes' according to specified 'h_samples'.
