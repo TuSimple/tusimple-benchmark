@@ -25,8 +25,6 @@ For each test sequence, predict the planar velocity and position of certain vehi
 
 ## Label Data Format
 
-__Format__
-
  - calibration.txt: a text file containing the intrinsic parameters of the camera used, structured in a 3*3 matrix and the camera height to the ground.
 
 Each of the training clip can be found under a clip folder named in 3 digits.
