@@ -1,9 +1,9 @@
 # Guideline for Velocity Estimation Challenge
 
 ## Download
-The data of lane detection challenge is available for download here. 
+The data of lane detection challenge is available for download here.
 
-(lane_detection [246 training image sequences])[]
+[lane_detection [246 training image sequences]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity.tar.gz)
 
 ## Annotation Format
 
@@ -14,7 +14,7 @@ The files in the folder are structured as follows:
 
 And the ground truth json file is structured as follows:
 ```
-{ 
+{
    [vehicle]: an array of [vehicle], defining the velocity and position of each vehicle in the image.
 }
 
@@ -33,7 +33,7 @@ The testing data contains only "bbox" field of the ground truth format, indicati
 ]}
 ```
 
-## Results format 
+## Results format
 
 The results format closely mimics the format of the gound truth as described on the previous section. A seperate result json file should be created for each seperate clip, named after such clip, containing the exact bouding box provided in the testing indication file, and velocity and position your algorithm estimated.
 ```
@@ -44,5 +44,4 @@ The results format closely mimics the format of the gound truth as described on 
 ```
 
 ## Evaluation
-The evaluation code, as described in (here)[README.md], can be found in (demo code)[]
-
+The evaluation code, as described in [here](https://tusimple.github.io/tusimple-benchmark/#/challenge/velocity/readme), can be found in [demo code]()
