@@ -13,7 +13,7 @@ The files in the folder are structured as follows:
  - annotation.json: a json file, containing the ground truth velocity and position for designated vehicles.  
 
 And the ground truth json file is structured as follows:
-```json
+```
 { 
    [vehicle]: an array of [vehicle], defining the velocity and position of each vehicle in the image.
 }
@@ -28,14 +28,14 @@ vehicle:
 
 ## Testing Indication format
 The testing data contains only "bbox" field of the ground truth format, indicating the vehicle whose velocity needs to be estimated. structured as follows:
-```json
+```
 {[  "bbox": [top, left, bottom, right]
 ]}
 
 ## Results format 
 
 The results format closely mimics the format of the gound truth as described on the previous section. A seperate result json file should be created for each seperate clip, named after such clip, containing the exact bouding box provided in the testing indication file, and velocity and position your algorithm estimated.
-```json
+```
 {[  "bbox": [top, left, bottom, right]
    "velocity": [x,y]
    "position": [x,y]

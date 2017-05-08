@@ -1,6 +1,6 @@
 # VELOCITY ESTIMATION DATASET FROM TUSIMPLE 
 
-![](assets/examples/1.jpg)
+![](assets/examples/dis1.jpeg)
 
 ## Task Description
 For each test sequence, predict the planar velocity and position of certain vehicles relative to the camera on a specific frame given. All the velocity and position displacement on the vertical direction is ignored in this dataset. The output from your system should be a 2d vector representing the velocity vector, and a 2d coordinate in meters representing the closest point of the vehicle to the camera for each vehicle. The output should be formatted similarly with the ground truth given, whose format will be defined in the following section.
@@ -35,7 +35,7 @@ The files in the folder are structured as follows:
  - annotation.json: a json file, containing the ground truth velocity and position for designated vehicles.  
 
 And the ground truth json file is structured as follows:
-```json
+```
 { 
    [vehicle]: an array of [vehicle], defining the velocity and position of each vehicle in the image.
 }
@@ -51,13 +51,13 @@ vehicle:
 ## Evaluation Protocal
 The metric we use in evaluating velocity estimation is Mean Squared Velocity Error:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$$E_v&space;=&space;\frac{\sum_{c\in&space;C}\|V^{gt}_c-V^{est}_c\|^2}{|C|}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$E_v&space;=&space;\frac{\sum_{c\in&space;C}\|V^{gt}_c-V^{est}_c\|^2}{|C|}$$" title="$$E_v = \frac{\sum_{c\in C}\|V^{gt}_c-V^{est}_c\|^2}{|C|}$$" /></a>
+<img src="https://latex.codecogs.com/gif.latex?$$E_v&space;=&space;\frac{\sum_{c\in&space;C}\|V^{gt}_c-V^{est}_c\|^2}{|C|}$$"/>
 
-with <a href="https://www.codecogs.com/eqnedit.php?latex=$C$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$C$" title="$C$" /></a> denotes the set of submitted results for each vehicle, <a href="https://www.codecogs.com/eqnedit.php?latex=$V^{gt}_c$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$V^{gt}_c$" title="$V^{gt}_c$" /></a> represents the ground truth velocity for a certain vehicle, and <a href="https://www.codecogs.com/eqnedit.php?latex=$V^{est}_c$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$V^{est}_c$" title="$V^{est}_c$" /></a> represents the estimated velocity for such vehicle. Similarly, we use Mean Squared Position Error to evaluate position esitimation: 
+with <img src="https://latex.codecogs.com/gif.latex?$C$"/> denotes the set of submitted results for each vehicle, <img src="https://latex.codecogs.com/gif.latex?$V^{gt}_c$"/> represents the ground truth velocity for a certain vehicle, and <img src="https://latex.codecogs.com/gif.latex?$V^{est}_c$"/> represents the estimated velocity for such vehicle. Similarly, we use Mean Squared Position Error to evaluate position esitimation: 
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$$E_p&space;=&space;\frac{\sum_{c\in&space;C}\|P^{gt}_c-P^{est}_c\|^2}{|C|}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$E_p&space;=&space;\frac{\sum_{c\in&space;C}\|P^{gt}_c-P^{est}_c\|^2}{|C|}$$" title="$$E_p = \frac{\sum_{c\in C}\|P^{gt}_c-P^{est}_c\|^2}{|C|}$$" /></a>
+<img src="https://latex.codecogs.com/gif.latex?$$E_p&space;=&space;\frac{\sum_{c\in&space;C}\|P^{gt}_c-P^{est}_c\|^2}{|C|}$$"/>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=$P^{gt}_c$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$P^{gt}_c$" title="$P^{gt}_c$" /></a> represents the ground truth position of the nearest point on a certain vehicle, and <a href="https://www.codecogs.com/eqnedit.php?latex=$P^{est}_c$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$P^{est}_c$" title="$P^{est}_c$" /></a> represents the estimated position of the nearest point on such vehicle.
+<img src="https://latex.codecogs.com/gif.latex?$P^{gt}_c$"/> represents the ground truth position of the nearest point on a certain vehicle, and <img src="https://latex.codecogs.com/gif.latex?$P^{est}_c$"/> represents the estimated position of the nearest point on such vehicle.
 
 We classifiy test vehicles by its relative distance to the camera into three classes: Near(0-15m), Medium(15-40m), and Far(40m+). We evaluate the performance seperately, and average them together to get the final evaluation score.
 
