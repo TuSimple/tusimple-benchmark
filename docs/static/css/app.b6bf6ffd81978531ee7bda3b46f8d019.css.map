@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/components/Mark.vue"],"names":[],"mappings":"AACA,QACE,eAAiB,CAEnB,cACI,UAAY","file":"static/css/app.b6bf6ffd81978531ee7bda3b46f8d019.css","sourcesContent":["\n.marked {\n  font-size: large;\n}\n.marked p > img {\n    width: 100%;\n}\n\n\n\n// WEBPACK FOOTER //\n// ./src/components/Mark.vue"],"sourceRoot":""}
