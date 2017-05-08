@@ -1,7 +1,7 @@
 # Guideline for Lane Detection Challenge
 
 ## Download
-The full introduction is on the (page)[]. 
+The full introduction is on the [page](). 
 
 The data of lane detection challenge is available for download here.
 
@@ -19,10 +19,10 @@ For one frame, the format of ground-truth and prediction is following.
 ```
 You can `zip`  each lane in `lanes` with `h_samples`to get sequential points of one lane.
 
-The (demo code)[] shows how to do this. We assume that for one lane boundary there is no situation where multiple points on one `h_sample`.
+The [demo code]() shows how to do this. We assume that for one lane boundary there is no situation where multiple points on one `h_sample`.
 
 ## Evaluation
-The evaluation process is described in the (page)[]. 
+The evaluation process is described in the [page](https://tusimple.github.io/tusimple-benchmark/#/challenge/lane/readme). The implementation is [here](https://github.com/TuSimple/tusimple-benchmark/blob/master/evaluate/lane.py) 
 
-The (demo code)[] shows how to evaluate one frame.
+The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows how to evaluate one frame.
 
