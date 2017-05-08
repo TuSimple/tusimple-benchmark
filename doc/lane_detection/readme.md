@@ -1,7 +1,6 @@
 # TuSimple Lane Detection Challenge
 
-![](assets/examples/520.jpg)
-![](assets/examples/620.jpg)
+![](assets/examples/lane_example.jpg)
 
 ## Description
 The lane marking is the main component on the highway. It instructs the vehicles interactively and safely drive on the highway. Lane detection is a critical task in autonomous driving, which provides localization information to the control of the car. We provide video clips for this task, and the last frame of each clip contains labelled lanes. The video clip can help algorithms to infer better lane detection results.
