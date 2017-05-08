@@ -27,5 +27,6 @@ The evaluation process is described in the [page](https://tusimple.github.io/tus
 In the demo code we present how to evaluate one frame's prediction.
 
 ## Demo
-The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows how to evaluate one frame.
+The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows the data
+format of the lane dataset and the usage of the evaluation tool. 
 
