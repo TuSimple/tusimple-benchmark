@@ -64,8 +64,12 @@ __Format__
 ```
 The list of four lanes contains semantic meaning, positions compared to the car. We encourage you to predict lanes with the same semantic order, however, we do not evaluate the order nowadays. You can put the most confident four lines of lane markings in a list with any order as the value of 'lanes'.
 
-The evaluation formula:
+The evaluation formula is
+
+<center>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$\frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
+</center>
+
 where
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$C_{clip}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$C_{clip}$" title="$C_{clip}$" /></a>
  is the number of correct points in the last frame of the `clip`,
