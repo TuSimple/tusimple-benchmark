@@ -31,6 +31,7 @@ The testing data contains only "bbox" field of the ground truth format, indicati
 ```
 {[  "bbox": [top, left, bottom, right]
 ]}
+```
 
 ## Results format 
 
