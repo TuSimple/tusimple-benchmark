@@ -3,7 +3,7 @@
 ![](assets/examples/dis1.jpeg)
 
 ## Task Description
-For each test sequence, predict the planar velocity and position of certain vehicles relative to the camera on a specific frame given. All the velocity and position displacement on the vertical direction is ignored in this dataset. The output from your system should be a 2d vector representing the velocity vector, and a 2d coordinate in meters representing the closest point of the vehicle to the camera for each vehicle. The output should be formatted similarly with the ground truth given, whose format will be defined in the following section.
+For each test sequence, predict the planar velocity and position of certain vehicles relative to the camera on a specific frame given. All the velocity and displacement on the vertical direction is ignored in this dataset. The output from your system should be a 2d vector representing the velocity vector, and a 2d coordinate in meters representing the closest point of the vehicle to the camera for each vehicle. The output should be formatted similarly with the ground truth given, whose format will be defined in the following section.
 
 ## Size 
 246 training clips, each containing 60 frames of 30fps video.
