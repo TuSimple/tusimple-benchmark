@@ -3,12 +3,12 @@
 ## Download
 The full introduction is on the [page](https://tusimple.github.io/tusimple-benchmark/#/challenge/lane/readme). 
 
-The data of lane detection challenge is available for download here.
+The data of the lane detection challenge is available for download here.
 
 [lane_detection [9 GB, 2858 labelled frame]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/lane_data.zip)
 
 ## Data Format
-For one frame, the format of ground-truth and prediction is following.
+For one frame, the format of ground-truth and prediction are as the following.
 ```
 {
 'raw_file': str. Clip file path.
@@ -19,7 +19,10 @@ For one frame, the format of ground-truth and prediction is following.
 ```
 You can `zip`  each lane in `lanes` with `h_samples`to get sequential points of one lane.
 
-The demo code (see below) will show how to do this. We assume that for one lane boundary there is no situation where multiple points are on one `h_sample`.
+The demo code (see below) will show how to do this.
+We assume that for one lane, at the same `h_sample` there will be only one road mark point. In other words, we assume 
+the lane will not turn around.
+
 
 ## Evaluation
 The evaluation process is described in the [page](https://tusimple.github.io/tusimple-benchmark/#/challenge/lane/readme).

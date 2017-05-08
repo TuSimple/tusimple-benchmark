@@ -20,7 +20,7 @@ Information of each clip: 20 frames for each one.
    		|----label_data.json			# Label data for lanes
 
 ## Label Data Format
-Each json line in 'label_data.json' is the label data for __the last (20th) frame__ of some clip.
+Each json line in 'label_data.json' is the label data for __the last (20th) frame__ of this clip.
 
 __Format__
 
@@ -50,7 +50,8 @@ For example,
 `-100` in `lanes` means on some h_sample, there is no existing lane marking. The first existing point in the first lane is `(632, 240)`.
 
 ## Evaluation:
-For each prediction of a clip, organize the result with the same format of label data. Also, you need to output a same `h_samples` in the results for evaluation. It means we are going to evaluation points of specified image heights.
+For each prediction of a clip, please organize the result as the same format of label data.
+Also, you need to output the same `h_samples` in the results for evaluation. It means we are going to evaluate points of some specific image heights.
 
 __Format__
 
@@ -62,7 +63,8 @@ __Format__
 	'h_samples': list. Same with requested `h_samples`in some evaluation dataset.
 }
 ```
-The list of four lanes contains semantic meaning, positions compared to the car. We encourage you to predict lanes with the same semantic order, however, we do not evaluate the order nowadays. You can put the most confident four lines of lane markings in a list with any order as the value of 'lanes'.
+The orders of four lanes has semantic meaning: the relative position of the car. We encourage you to predict lanes with the same semantic order. 
+However, we do not evaluate the order for now. You can put the most confident four lines of lane markings in a list with any order as the value of 'lanes'.
 
 The evaluation formula is
 
@@ -76,4 +78,4 @@ where
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$S_{clip}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$S_{clip}$" title="$S_{clip}$" /></a>
  is the number of requested points in the last frame of the `clip`. If the difference between the width of ground-truth and prediction is less than a threshold, the predicted point is a correct one. If you some point is out of view or there is no lane markings of some specific `h_sample`, just record the detection as `-100`. We will evaluate the values of all heights in `h_sample`.
 
-We do not release testing dataset at present, you can split the label data to training/validation/testing datasets. You are supposed to predict 'lanes' according to specified 'h_samples'.
+We do not release testing dataset at present, you can split the label data as the training/validation/testing datasets. You are supposed to predict 'lanes' according to the specified 'h_samples'.
