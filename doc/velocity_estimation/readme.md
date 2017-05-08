@@ -1,11 +1,11 @@
-# VELOCITY ESTIMATION DATASET FROM TUSIMPLE 
+# VELOCITY ESTIMATION DATASET FROM TUSIMPLE
 
 ![](assets/examples/dis1.jpeg)
 
 ## Task Description
 For each test sequence, predict the planar velocity and position of certain vehicles relative to the camera on a specific frame given. All the velocity and displacement on the vertical direction is ignored in this dataset. The output from your system should be a 2d vector representing the velocity vector, and a 2d coordinate in meters representing the closest point of the vehicle to the camera for each vehicle. The output should be formatted similarly with the ground truth given, whose format will be defined in the following section.
 
-## Size 
+## Size
 246 training clips, each containing 60 frames of 30fps video.
 
 ## Directory Structure:
@@ -34,7 +34,7 @@ The files in the folder are structured as follows:
 
 And the ground truth json file is structured as follows:
 ```
-{ 
+{
    [vehicle]: an array of [vehicle], defining the velocity and position of each vehicle in the image.
 }
 
@@ -51,7 +51,7 @@ The metric we use in evaluating velocity estimation is Mean Squared Velocity Err
 
 <img src="https://latex.codecogs.com/gif.latex?$$E_v&space;=&space;\frac{\sum_{c\in&space;C}\|V^{gt}_c-V^{est}_c\|^2}{|C|}$$"/>
 
-with <img src="https://latex.codecogs.com/gif.latex?$C$"/> denotes the set of submitted results for each vehicle, <img src="https://latex.codecogs.com/gif.latex?$V^{gt}_c$"/> represents the ground truth velocity for a certain vehicle, and <img src="https://latex.codecogs.com/gif.latex?$V^{est}_c$"/> represents the estimated velocity for such vehicle. Similarly, we use Mean Squared Position Error to evaluate position esitimation: 
+with <img src="https://latex.codecogs.com/gif.latex?$C$"/> denotes the set of submitted results for each vehicle, <img src="https://latex.codecogs.com/gif.latex?$V^{gt}_c$"/> represents the ground truth velocity for a certain vehicle, and <img src="https://latex.codecogs.com/gif.latex?$V^{est}_c$"/> represents the estimated velocity for such vehicle. Similarly, we use Mean Squared Position Error to evaluate position esitimation:
 
 <img src="https://latex.codecogs.com/gif.latex?$$E_p&space;=&space;\frac{\sum_{c\in&space;C}\|P^{gt}_c-P^{est}_c\|^2}{|C|}$$"/>
 

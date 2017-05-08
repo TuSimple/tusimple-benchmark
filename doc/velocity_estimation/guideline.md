@@ -29,8 +29,7 @@ vehicle:
 ## Testing Indication format
 The testing data contains only "bbox" field of the ground truth format, indicating the vehicle whose velocity needs to be estimated. structured as follows:
 ```
-{[  "bbox": [top, left, bottom, right]
-]}
+{[ "bbox": [top, left, bottom, right] ]}
 ```
 
 ## Results format
@@ -44,4 +43,4 @@ The results format closely mimics the format of the gound truth as described on 
 ```
 
 ## Evaluation
-The evaluation code, as described in [here](https://tusimple.github.io/tusimple-benchmark/#/challenge/velocity/readme), can be found in [demo code]()
+The evaluation code, as described in [here](http://benchmark.tusimple.ai/#/challenge/velocity/readme), can be found in [demo code]()
