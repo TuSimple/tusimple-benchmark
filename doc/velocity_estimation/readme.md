@@ -1,4 +1,4 @@
-# VELOCITY ESTIMATION DATASET FROM TUSIMPLE
+# TuSimple Velocity Estimation Challenge
 
 ![](assets/examples/dis1.jpeg)
 
