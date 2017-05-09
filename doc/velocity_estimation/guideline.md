@@ -43,4 +43,4 @@ The results format closely mimics the format of the gound truth as described on 
 ```
 
 ## Evaluation
-The evaluation code, as described in [here](http://benchmark.tusimple.ai/#/challenge/velocity/readme), can be found in [demo code]()
+The evaluation code, as described in [here](http://benchmark.tusimple.ai/#/challenge/velocity/readme), can be found in [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/velocity_demo.ipynb)
