@@ -1,4 +1,4 @@
-# VELOCITY ESTIMATION DATASET FROM TUSIMPLE 
+# TuSimple Velocity Estimation Challenge
 
 ![](assets/examples/dis1.jpeg)
 
@@ -7,7 +7,7 @@ The goal of this challenge is to estimate the motion and position of vehicles re
 ## Task Definition
 For each test sequence, predict the planar velocity and position of certain vehicles relative to the camera on a given specific frame. All the velocity and displacement in the up/down direction is ignored in this dataset. The output from your system should be a 2d vector representing the velocity vector, and a 2d coordinate in meters representing the closest point of the vehicle to the camera for each vehicle. The output should be formatted similarly with the given ground truth, whose format will be defined in the following section.
 
-## Size 
+## Size
 246 training clips, each containing 60 frames of 30fps video.
 
 ## Directory Structure:
@@ -35,7 +35,7 @@ The files in the folder are structured as follows:
 
 And the ground truth json file is structured as follows:
 ```
-{ 
+{
    [vehicle]: an array of [vehicle], defining the velocity and position of each vehicle in the image.
 }
 
