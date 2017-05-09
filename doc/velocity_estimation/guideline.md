@@ -3,7 +3,7 @@
 ## Download
 The data of lane detection challenge is available for download here.
 
-[lane_detection [246 training image sequences]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity.tar.gz)
+[lane_detection [246 training image sequences]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity.zip)
 
 ## Annotation Format
 
