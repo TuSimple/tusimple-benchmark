@@ -18,6 +18,7 @@ For velocity estimation, we provide 246 training clips, each containing 60 frame
 
 ## Directory Structure:
 `benchmark_velocity.zip`:
+
       |----readme.md                  # description
       |
       |----calibration.txt            #intrinsic parameters of the used camera
@@ -31,6 +32,7 @@ For velocity estimation, we provide 246 training clips, each containing 60 frame
       |------|----...
 
 `benchmark_velocity_supp.zip`:
+
       |----readme.md              # description
       |
       |----annotation.json      # bounding box annotations
@@ -64,17 +66,17 @@ vehicle:
 `benchmark_velocity_supp.zip`:
   - supp_img/: folder contains all the training images, named in 4 digit numbers.
   - annotation.json: a json file, containing the ground truth bounding box for all vehicles in all training images, structured as follows:
-  ```
-  {
-    [img]: an array of [img], representing the ground truth bounding box annotation for each image.
-  }
+```
+{
+  [img]: an array of [img], representing the ground truth bounding box annotation for each image.
+}
 
-  img:
-  {
-    "file_name": a string representing the image file name.
-    "bbox": a list of json structure [{'left', 'top', 'bottom', 'right'}], each representing the axis-aligned rectangle specifying the extend of a vehicle in this image.
-  }
-  ```
+img:
+{
+  "file_name": a string representing the image file name.
+  "bbox": a list of json structure [{'left', 'top', 'bottom', 'right'}], each representing the axis-aligned rectangle specifying the extend of a vehicle in this image.
+}
+```
 
 ## Evaluation Protocol
 The metric we use in evaluating velocity estimation is Mean Squared Velocity Error:

@@ -30,17 +30,17 @@ vehicle:
 `benchmark_velocity_supp.zip`:
   - supp_img/: folder contains all the training images, named in 4 digit numbers.
   - annotation.json: a json file, containing the ground truth bounding box for all vehicles in all training images, structured as follows:
-  ```
-  {
-    [img]: an array of [img], representing the ground truth bounding box annotation for each image.
-  }
+```
+{
+[img]: an array of [img], representing the ground truth bounding box annotation for each image.
+}
 
-  img:
-  {
-    "file_name": a string representing the image file name.
-    "bbox": a list of json structure [{'left', 'top', 'bottom', 'right'}], each representing the axis-aligned rectangle specifying the extend of a vehicle in this image.
-  }
-  ```
+img:
+{
+"file_name": a string representing the image file name.
+"bbox": a list of json structure [{'left', 'top', 'bottom', 'right'}], each representing the axis-aligned rectangle specifying the extend of a vehicle in this image.
+}
+```
 
 ## Testing Indication format
 The testing data contains only "bbox" field of the ground truth format, indicating the vehicle whose velocity needs to be estimated. structured as follows:
