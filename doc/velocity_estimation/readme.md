@@ -69,7 +69,7 @@ vehicle:
   - annotation.json: a json file, containing the ground truth bounding box for all vehicles in all training images, structured as follows:
 ```
 {
-  [img]: an array of [img], representing the ground truth bounding box annotation for each image.
+  [img]: an array of [img], representing the ground truth bounding box annotations for each image.
 }
 
 img:
