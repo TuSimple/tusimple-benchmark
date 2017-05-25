@@ -36,7 +36,7 @@ For velocity estimation, we provide 246 training clips, each containing 60 frame
       |----readme.md              # description
       |
       |----annotation.json      # bounding box annotations
-      |----clips/               # 919 images
+      |----supp_img/               # 919 images
 ```      
       
 
