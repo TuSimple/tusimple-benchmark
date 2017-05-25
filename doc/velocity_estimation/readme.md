@@ -18,7 +18,7 @@ For velocity estimation, we provide 246 training clips, each containing 60 frame
 
 ## Directory Structure:
 `benchmark_velocity.zip`:
-
+```
       |----readme.md                  # description
       |
       |----calibration.txt            #intrinsic parameters of the used camera
@@ -30,13 +30,14 @@ For velocity estimation, we provide 246 training clips, each containing 60 frame
       |------|--------|
       |------|--------|----annotation.json    # json annotation of designated vehicles.
       |------|----...
-
+```
 `benchmark_velocity_supp.zip`:
-
+```
       |----readme.md              # description
       |
       |----annotation.json      # bounding box annotations
       |----clips/               # 919 images
+```      
       
 
 ## Label Data Format
