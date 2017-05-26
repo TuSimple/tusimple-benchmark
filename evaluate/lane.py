@@ -4,7 +4,8 @@ from sklearn.linear_model import LinearRegression
 
 class LaneEval(object):
     lr = LinearRegression()
-    thresh = 20
+    pixel_thresh = 20
+    pt_thresh = 0.9
 
     @staticmethod
     def get_angle(xs, y_samples):
@@ -23,13 +24,19 @@ class LaneEval(object):
         return np.sum(np.where(np.abs(pred - gt) < thresh, 1., 0.)) / len(gt)
 
     @staticmethod
-    def accuracy(pred, gt, y_samples):
-        # pred = [x_preds]
-        # gt = [x_gts]
+    def bench(pred, gt, y_samples):
         angles = [LaneEval.get_angle(np.array(x_gts), np.array(y_samples)) for x_gts in gt]
-        threshs = [LaneEval.thresh / np.cos(angle) for angle in angles]
+        threshs = [LaneEval.pixel_thresh / np.cos(angle) for angle in angles]
         line_accs = []
+        fp, fn = 0., 0.
+        matched = 0.
         for x_gts, thresh in zip(gt, threshs):
             accs = [LaneEval.line_accuracy(np.array(x_preds), np.array(x_gts), thresh) for x_preds in pred]
-            line_accs.append(np.max(accs))
-        return np.mean(line_accs)
+            max_acc = np.max(accs)
+            if max_acc < LaneEval.pt_thresh:
+                fn += 1
+            else:
+                matched += 1
+            line_accs.append(max_acc)
+        fp = len(pred) - matched
+        return np.mean(line_accs), fp / len(pred), fn / len(gt)

@@ -27,12 +27,13 @@ __Format__
 ```
     {
      	'raw_file': str. Clip file path.
-     	'lanes': list. A list of four lanes - [inner_left_lane, inner_right_lane, outer_left_lane, outer_right_lane].
-	     	for each list of one lane, the elements are width values on image.
+     	'lanes': list. A list of four lanes. For each list of one lane, the elements are width values on image.
      	'h_samples': list. A list of height values corresponding to the 'lanes', which means len(h_samples) == len(lanes[i])
     }
 ```
 The four polylines are orgnized by the same distance gap ('h_sample' in each label data) from the recording car. It means you can pair each element in one lane and h_samples to get position of lane marking on images.
+
+Also, the four lanes are around the center of sight, which we encourage the autonomous driving vehicle to focus on the current lane and left/right lanes. These lanes are essential for the control of the car.
 
 For example,
 ```
@@ -58,14 +59,10 @@ __Format__
 ```
 {
 	'raw_file': str. Clip file path
-	'lanes': list. A list of four lanes - [inner_left_lane, inner_right_lane, outer_left_lane, outer_right_lane].
-			 for each list of one lane, there is only width index on the image.
+	'lanes': list. A list of four lanes. For each list of one lane, there is only width index on the image.
 	'h_samples': list. Same with requested `h_samples`in some evaluation dataset.
 }
 ```
-The orders of four lanes has semantic meaning: the relative position of the car. We encourage you to predict lanes with the same semantic order. 
-However, we do not evaluate the order for now. You can put the most confident four lines of lane markings in a list with any order as the value of 'lanes'.
-
 The evaluation formula is
 
 <center>
