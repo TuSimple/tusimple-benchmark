@@ -61,6 +61,7 @@ __Format__
 	'raw_file': str. Clip file path
 	'lanes': list. A list of four lanes. For each list of one lane, there is only width index on the image.
 	'h_samples': list. Same with requested `h_samples`in some evaluation dataset.
+    'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
 ```
 The evaluation formula is
@@ -74,5 +75,7 @@ where
  is the number of correct points in the last frame of the `clip`,
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$S_{clip}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$S_{clip}$" title="$S_{clip}$" /></a>
  is the number of requested points in the last frame of the `clip`. If the difference between the width of ground-truth and prediction is less than a threshold, the predicted point is a correct one. If you some point is out of view or there is no lane markings of some specific `h_sample`, just record the detection as `-100`. We will evaluate the values of all heights in `h_sample`.
+
+We also request the running time from your algorithm. We do not rank by running time. However, algorithms that are too slow (like less than 3 fps using single GPU) will not appear in the ranking. 
 
 We do not release testing dataset at present, you can split the label data as the training/validation/testing datasets. You are supposed to predict 'lanes' according to the specified 'h_samples'.

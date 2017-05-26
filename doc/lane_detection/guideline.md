@@ -14,6 +14,7 @@ For one frame, the format of ground-truth and prediction are as the following.
 'raw_file': str. Clip file path.
 'lanes': list. A list of four lanes. For each list of one lane, the elements are width values on image.
 'h_samples': list. A list of height values corresponding to the 'lanes', which means len(h_samples) == len(lanes[i])
+'run_time': list of floats. ONLY appear in predictions. The running time for each frame in the clip. The unit is millisecond.
 }
 ```
 You can `zip`  each lane in `lanes` with `h_samples`to get sequential points of one lane.
