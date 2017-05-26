@@ -5,7 +5,7 @@ The full introduction is on the [page](http://benchmark.tusimple.ai/#/challenge/
 
 The data of the lane detection challenge is available for download here.
 
-[lane_detection [9 GB, 2858 labelled frame]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/lane_data.zip)
+[lane_detection [9 GB, 2858 labelled frame]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/lane_detection.zip)
 
 ## Data Format
 For one frame, the format of ground-truth and prediction are as the following.
