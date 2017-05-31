@@ -9,7 +9,14 @@ The lane marking is the main component on the highway. It instructs the vehicles
 2858 video clips, 2858 labelled frames.
 Information of each clip: 20 frames for each one.
 
-## Directory Structure:
+## Download
+The full introduction is on the [page](http://benchmark.tusimple.ai/#/challenge/lane/readme).
+
+The data of the lane detection challenge is available for download here.
+
+[lane_detection [9 GB, 2858 labelled frame]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/lane_detection.zip)
+
+### Directory Structure:
    	dataset
    		|
    		|----clips/ 					# video clips, 2858 clips
@@ -18,6 +25,10 @@ Information of each clip: 20 frames for each one.
    		|------|----...
    		|
    		|----label_data.json			# Label data for lanes
+
+### Demo
+The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows the data
+format of the lane dataset and the usage of the evaluation tool.
 
 ## Label Data Format
 Each json line in 'label_data.json' is the label data for __the last (20th) frame__ of this clip.
@@ -61,7 +72,7 @@ __Format__
 	'raw_file': str. Clip file path
 	'lanes': list. A list of four lanes. For each list of one lane, there is only width index on the image.
 	'h_samples': list. Same with requested `h_samples`in some evaluation dataset.
-    'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
+  'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
 ```
 The evaluation formula is
