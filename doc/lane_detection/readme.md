@@ -10,7 +10,6 @@ The lane marking is the main component on the highway. It instructs the vehicles
 Information of each clip: 20 frames for each one.
 
 ## Download
-The full introduction is on the [page](http://benchmark.tusimple.ai/#/challenge/lane/readme).
 
 The data of the lane detection challenge is available for download here.
 
