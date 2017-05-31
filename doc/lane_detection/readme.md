@@ -41,7 +41,9 @@ __Format__
       'h_samples': list. A list of height values corresponding to the 'lanes', which means len(h_samples) == len(lanes[i])
     }
 ```
-The four polylines are orgnized by the same distance gap ('h_sample' in each label data) from the recording car. It means you can pair each element in one lane and h_samples to get position of lane marking on images.
+Actually there will be at most 5 lane markings in `lanes`. We expect at most 4 lane markings (current lane and left/right lanes). The extra lane is used when changing lane because it is confused to tell which lane is the current lane.
+
+The polylines are orgnized by the same distance gap ('h_sample' in each label data) from the recording car. It means you can pair each element in one lane and h_samples to get position of lane marking on images.
 
 Also, the lanes are around the center of sight, which we encourage the autonomous driving vehicle to focus on the current lane and left/right lanes. These lanes are essential for the control of the car.
 
@@ -74,6 +76,8 @@ __Format__
   'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
 ```
+Remember we expect at most 4 lane markings in `lanes` (current lane and left/right lanes). Feel free to output either a extra left or right lane marking when changing lane. 
+
 The evaluation formula is
 
 <center>

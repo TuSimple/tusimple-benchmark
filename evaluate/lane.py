@@ -44,4 +44,4 @@ class LaneEval(object):
         fp = len(pred) - matched
         if len(gt) > 4:
             fn -= 1
-        return line_accs / min(4.0, len(gt)), fp / len(pred), fn / len(gt)
+        return sum(line_accs) / min(4.0, len(gt)), fp / len(pred), fn / len(gt)
