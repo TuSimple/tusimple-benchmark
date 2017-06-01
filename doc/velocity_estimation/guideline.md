@@ -4,7 +4,7 @@
 The data of lane detection challenge is available for download here.
 
 [velocity_estimation [246 training image sequences]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity.zip)
-[supplementary_data [919 training images]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity_supp.zip)
+[supplementary_data [5066 training images]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity_supp.zip)
 
 ## Annotation Format
 

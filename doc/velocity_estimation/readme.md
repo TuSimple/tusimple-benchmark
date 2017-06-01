@@ -11,10 +11,10 @@ For each test sequence, predict the planar velocity and position of certain vehi
 ## Dataset Download
 
 [velocity_estimation [246 training image sequences]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity.zip)
-[supplementary_data [919 training images]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity_supp.zip)
+[supplementary_data [5066 training images]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/benchmark_velocity_supp.zip)
 
 ## Size
-For velocity estimation, we provide 246 training clips, each containing 60 frames of 30 fps video. We also provide 919 supplementary training images, labeled with vehicle bounding boxes. You can use the supplementary training data to assist you during your training process.
+For velocity estimation, we provide 246 training clips, each containing 60 frames of 30 fps video. We also provide 5066 supplementary training images, labeled with vehicle bounding boxes. You can use the supplementary training data to assist you during your training process.
 
 ## Directory Structure:
 `benchmark_velocity.zip`:
