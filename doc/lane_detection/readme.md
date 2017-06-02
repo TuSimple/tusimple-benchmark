@@ -23,7 +23,7 @@ The data of the lane detection challenge is available for download here.
       |------|----some_clip/      # Sequential images for the clip, 20 frames
       |------|----...
       |
-      |----label_data.json      # Label data for lanes
+      |----tasks.json      # Label data in training set, and a submission template for testing set. 
 
 ### Demo
 The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows the data
