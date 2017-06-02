@@ -72,7 +72,6 @@ __Format__
 {
   'raw_file': str. Clip file path
   'lanes': list. A list of lanes. For each list of one lane, there is only width index on the image.
-  'h_samples': list. Same with requested `h_samples`in some evaluation dataset.
   'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
 ```

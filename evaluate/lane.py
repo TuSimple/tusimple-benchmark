@@ -74,5 +74,3 @@ class LaneEval(object):
         num = len(gts)
         return json.dumps({'Accuracy': accuracy / num, 'FP': fp / num, 'FN': fn / num})
 
-print LaneEval.bench_one_submit('/mnt/truenas/scratch/sliu/benchmark/test_data.json',
-                                '/mnt/truenas/scratch/sliu/benchmark/label_data.json')
