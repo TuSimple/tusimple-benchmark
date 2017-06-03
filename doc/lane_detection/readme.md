@@ -1,24 +1,21 @@
 # TuSimple Lane Detection Challenge
 
-![](assets/examples/lane_example.jpg)
+![](https://raw.githubusercontent.com/TuSimple/tusimple-benchmark/master/doc/lane_detection/assets/examples/lane_example.jpg)
 
 ## Description
 The lane marking is the main component on the highway. It instructs the vehicles interactively and safely drive on the highway. Lane detection is a critical task in autonomous driving, which provides localization information to the control of the car. We provide video clips for this task, and the last frame of each clip contains labelled lanes. The video clip can help algorithms to infer better lane detection results.
 
 ## Dataset Size
-2858 video clips, 2858 labelled frames.
+- training dataset: 3626 video clips, 3626 labelled frames.
+- testing dataset: 2944 video clips.
+
 Information of each clip: 20 frames for each one.
 
-## Download
-
-The data of the lane detection challenge is available for download here.
-
-[lane_detection [9 GB, 2858 labelled frame]](https://s3-us-west-2.amazonaws.com/benchmark.tusimple.ai/lane_detection.zip)
 
 ### Directory Structure:
     dataset
       |
-      |----clips/           # video clips, 2858 clips
+      |----clips/           # video clips
       |------|
       |------|----some_clip/      # Sequential images for the clip, 20 frames
       |------|----...
@@ -30,13 +27,13 @@ The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/examp
 format of the lane dataset and the usage of the evaluation tool.
 
 ## Label Data Format
-Each json line in 'label_data.json' is the label data for __the last (20th) frame__ of this clip.
+Each json line in 'label_data_(date).json' is the label data for __the last (20th) frame__ of this clip.
 
 __Format__
 
 ```
     {
-      'raw_file': str. Clip file path.
+      'raw_file': str. 20th frame file path in a clip.
       'lanes': list. A list of lanes. For each list of one lane, the elements are width values on image.
       'h_samples': list. A list of height values corresponding to the 'lanes', which means len(h_samples) == len(lanes[i])
     }
@@ -64,13 +61,13 @@ For example,
 
 ## Evaluation:
 For each prediction of a clip, please organize the result as the same format of label data.
-Also, you need to output the same `h_samples` in the results for evaluation. It means we are going to evaluate points of some specific image heights.
+Also, you need to output the `lanes` according to the `h_samples` in the `test_tasks.json` for evaluation. It means we are going to evaluate points on specific image heights.
 
 __Format__
 
 ```
 {
-  'raw_file': str. Clip file path
+  'raw_file': str. 20th frame file path in a clip.
   'lanes': list. A list of lanes. For each list of one lane, there is only width index on the image.
   'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
