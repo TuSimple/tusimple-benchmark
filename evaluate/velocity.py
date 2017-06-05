@@ -115,4 +115,5 @@ class VeloEval(object):
         pe1 = np.mean(np.array(pos_error[1]))
         pe2 = np.mean(np.array(pos_error[2]))
 
-        return (ve0+ve1+ve2)/3, ve0, ve1, ve2, (pe0+pe1+pe2)/3, pe0, pe1, pe2, pe3
+        return json.dumps({'VE':(ve0+ve1+ve2)/3, 'VENear':ve0, 'VEMed':ve1, 'VEFar':ve2, 'PE':(pe0+pe1+pe2)/3, 'PENear':pe0, 'PEMed':pe1, 'PEFar':pe2})
+        
