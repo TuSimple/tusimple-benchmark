@@ -1,6 +1,6 @@
 # TuSimple Velocity Estimation Challenge
 
-![](assets/examples/dis1.jpeg)
+![](https://raw.githubusercontent.com/TuSimple/tusimple-benchmark/master/doc/velocity_estimation/assets/examples/dis1.jpeg)
 
 
 
