@@ -92,7 +92,7 @@ class VeloEval(object):
             with open(pred_file, 'r') as f:
                 json_pred = json.load(f)
             with open(gt_file, 'r') as f:
-                json_gt = jsonload(f)    
+                json_gt = json.load(f)    
         except BaseException as e:
             raise Exception('Fail to load json file of the prediction.')
         if len(json_gt) != len(json_pred):
