@@ -139,5 +139,5 @@ with <img src="https://latex.codecogs.com/gif.latex?$C$"/> denotes the set of su
 
 <img src="https://latex.codecogs.com/gif.latex?$P^{gt}_c$"/> represents the ground truth position of the nearest point on a certain vehicle, and <img src="https://latex.codecogs.com/gif.latex?$P^{est}_c$"/> represents the estimated position of the nearest point on such vehicle.
 
-We classifiy test vehicles by its relative distance to the camera into three classes: Near(0-20m), Medium(15-45m), and Far(45m+). We evaluate the performance seperately on these three classes, and average them together to get the final evaluation score. For our competition, we rank your algorithm only based on the performance of velocity estimation.
+We classifiy test vehicles by its relative distance to the camera into three classes: Near(0-20m), Medium(20-45m), and Far(45m+). We evaluate the performance seperately on these three classes, and average them together to get the final evaluation score. For our competition, we rank your algorithm only based on the performance of velocity estimation.
 
