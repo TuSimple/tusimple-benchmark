@@ -126,7 +126,7 @@ vehicle:
      "position": a float pair [x,y]. Predicted planar position of the nearest point on vehicle in meters. x direction is the same with the camera optical axis, and y direction is vertical to x and towards right.
 }
 ```
-For our competition, you are required to provide a per-vehicle running time and the computing device config for your method along with your submission. This information will not be included in the ranking.
+For our competition, you are required to provide a per-vehicle running time and the computing environment configuration for your method along with your submission. This information will not be included in the ranking.
 
 ## Evaluation Protocol
 The metric we use in evaluating velocity estimation is Mean Squared Velocity Error:
