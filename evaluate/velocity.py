@@ -44,9 +44,9 @@ class VeloEval(object):
     @staticmethod
     def get_distance_label(gt):
         distance = np.linalg.norm(np.array(gt["position"]))
-        if distance < 15:
+        if distance < 20:
             return 0
-        elif distance < 40:
+        elif distance < 45:
             return 1
         else:
             return 2
@@ -89,8 +89,10 @@ class VeloEval(object):
     @staticmethod
     def bench_one_submit(pred_file, gt_file):
         try:
-            json_pred = [json.loads(line) for line in open(pred_file).readlines()]
-            json_gt = [json.loads(line) for line in open(gt_file).readlines()]
+            with open(pred_file, 'r') as f:
+                json_pred = json.load(f)
+            with open(gt_file, 'r') as f:
+                json_gt = jsonload(f)    
         except BaseException as e:
             raise Exception('Fail to load json file of the prediction.')
         if len(json_gt) != len(json_pred):
@@ -116,4 +118,3 @@ class VeloEval(object):
         pe2 = np.mean(np.array(pos_error[2]))
 
         return json.dumps({'VE':(ve0+ve1+ve2)/3, 'VENear':ve0, 'VEMed':ve1, 'VEFar':ve2, 'PE':(pe0+pe1+pe2)/3, 'PENear':pe0, 'PEMed':pe1, 'PEFar':pe2})
-        
