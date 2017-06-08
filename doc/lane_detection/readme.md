@@ -3,30 +3,51 @@
 ![](https://raw.githubusercontent.com/TuSimple/tusimple-benchmark/master/doc/lane_detection/assets/examples/lane_example.jpg)
 
 ## Description
-The lane marking is the main component on the highway. It instructs the vehicles interactively and safely drive on the highway. Lane detection is a critical task in autonomous driving, which provides localization information to the control of the car. We provide video clips for this task, and the last frame of each clip contains labelled lanes. The video clip can help algorithms to infer better lane detection results.
+The objects on road can be divided into two main parts, static objects and dynamic objects. The lane marking is the main static component on the highway. It instructs the vehicles interactively and safely drive on the highway. To encourage people to solve the lane detection problem on highway, we comprise about 7,000 one-second-long video clips of 20 frames each.   
 
-## Dataset Size
-- training dataset: 3626 video clips, 3626 labelled frames.
-- testing dataset: 2944 video clips.
+Lane detection is a critical task in autonomous driving, which provides localization information to the control of the car. We provide video clips for this task, and the last frame of each clip contains labelled lanes. The video clip can help algorithms to infer better lane detection results. With clips, we expect competitors to come up with more efficient algorithms. For an autonomous driving vehicle, a time/memory-efficient algorithm means more resources for other algorithms and engineering pipelines. 
 
-Information of each clip: 20 frames for each one.
+At the same time, we expect competitors to think about the semantic meaning of lanes for autonomous driving, rather than detecting every single lane marking on the road. Therefore, the annotations and testing are focused on the current and left/right lanes.
+
+There is a leaderboard showing the evaluation results for the submissions. We have prizes for the top-three competitors and they will be mentioned on CVPR 2017 Workshop on Autonomous Driving Challenge.
+
+## Dataset Feature
+Complexity:
+- Good and medium weather conditions
+- Different daytime
+- 2-lane/3-lane/4-lane/ or more highway roads.
+- Different traffic conditions
+
+Dataset size:
+- Training: 3626 video clips, 3626 annotated frames
+- Testing: 2944 video clips
+
+Camera and video clip:
+- 1s clip of 20 frames
+- The view direction of the camera is very close to the driving direction
+
+Type of annotations:
+- polylines for lane markings
+
+## Dataset Details
 
 
 ### Directory Structure:
+The directory structure for the training/testing dataset is following. We have a JSON file to instruct you how to use the data in `clips` directory.
     dataset
       |
-      |----clips/           # video clips
+      |----clips/                   # video clips
       |------|
-      |------|----some_clip/      # Sequential images for the clip, 20 frames
+      |------|----some_clip/        # Sequential images for the clip, 20 frames
       |------|----...
       |
-      |----tasks.json      # Label data in training set, and a submission template for testing set. 
+      |----tasks.json               # Label data in training set, and a submission template for testing set. 
 
 ### Demo
 The [demo code](https://github.com/TuSimple/tusimple-benchmark/blob/master/example/lane_demo.ipynb) shows the data
 format of the lane dataset and the usage of the evaluation tool.
 
-## Label Data Format
+### Label Data Format
 Each json line in 'label_data_(date).json' is the label data for __the last (20th) frame__ of this clip.
 
 __Format__
@@ -59,7 +80,9 @@ For example,
 ```
 `-2` in `lanes` means on some h_sample, there is no existing lane marking. The first existing point in the first lane is `(632, 240)`.
 
-## Evaluation:
+
+## Evaluation
+
 For each prediction of a clip, please organize the result as the same format of label data.
 Also, you need to output the `lanes` according to the `h_samples` in the `test_tasks.json` for evaluation. It means we are going to evaluate points on specific image heights.
 
@@ -96,3 +119,14 @@ Based on the formula above, we will also compute the rate of false positive and 
 where <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$F_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$F_{pred}$" title="$F_{pred}$" /></a> is the number of wrong predicted lanes, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$N_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$N_{pred}$" title="$N_{pred}$" /></a> is the number of all predicted lanes. <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$M_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$M_{pred}$" title="$M_{pred}$" /></a> is the number of missed ground-truth lanes in the predictions, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$N_{gt}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$N_{gt}$" title="$N_{gt}$" /></a> is the number of all ground-truth lanes.
 
 We also request the running time from your algorithm. We do not rank by running time. However, algorithms that are too slow (like less than 5 fps using single GPU) will be considered as no predicted lanes. 
+
+### Prizes
+
+The prizes for the winners are following. Please review the [rules]() for conditions to receive a prize.
+
+1. First place prize: $ 1000
+2. Second place prize: $ 500
+3. Third place prize: $ 250 
+
+We rank only by the `accuracy` we methioned above. `FP` and `FN` help competitors to improve their algorithm.
+
