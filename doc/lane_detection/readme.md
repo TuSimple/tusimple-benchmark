@@ -1,5 +1,4 @@
 # TuSimple Lane Detection Challenge
-## Description
 
 ![](https://raw.githubusercontent.com/TuSimple/tusimple-benchmark/master/doc/lane_detection/assets/examples/lane_example.jpg)
 
