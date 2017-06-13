@@ -1,15 +1,15 @@
 # TuSimple Lane Detection Challenge
+## Description
 
 ![](https://raw.githubusercontent.com/TuSimple/tusimple-benchmark/master/doc/lane_detection/assets/examples/lane_example.jpg)
 
-## Description
-The objects on road can be divided into two main parts, static objects and dynamic objects. The lane marking is the main static component on the highway. It instructs the vehicles interactively and safely drive on the highway. To encourage people to solve the lane detection problem on highway, we comprise about 7,000 one-second-long video clips of 20 frames each.   
-
+Objects on the road can be divided into two main groups: static objects and dynamic objects. Lane markings are the main static component on the highway. They instruct the vehicles to interactively and safely drive on the highway. To encourage people to solve the lane detection problem on highways, we are releasing about 7,000 one-second-long video clips of 20 frames each.   
+ 
 Lane detection is a critical task in autonomous driving, which provides localization information to the control of the car. We provide video clips for this task, and the last frame of each clip contains labelled lanes. The video clip can help algorithms to infer better lane detection results. With clips, we expect competitors to come up with more efficient algorithms. For an autonomous driving vehicle, a time/memory-efficient algorithm means more resources for other algorithms and engineering pipelines. 
-
+ 
 At the same time, we expect competitors to think about the semantic meaning of lanes for autonomous driving, rather than detecting every single lane marking on the road. Therefore, the annotations and testing are focused on the current and left/right lanes.
-
-There is a leaderboard showing the evaluation results for the submissions. We have prizes for the top-three competitors and they will be mentioned on CVPR 2017 Workshop on Autonomous Driving Challenge.
+ 
+We will have a leaderboard showing the evaluation results for the submissions. We have prizes for the top-three competitors, and they will also be mentioned at the CVPR 2017 Workshop on Autonomous Driving Challenge.
 
 ## Dataset Feature
 Complexity:
@@ -31,9 +31,9 @@ Type of annotations:
 
 ## Dataset Details
 
-
 ### Directory Structure:
 The directory structure for the training/testing dataset is following. We have a JSON file to instruct you how to use the data in `clips` directory.
+
     dataset
       |
       |----clips/                   # video clips
@@ -100,7 +100,7 @@ Remember we expect at most 4 lane markings in `lanes` (current lane and left/rig
 The evaluation formula is
 
 <center>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$\frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$accuracy = \frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$accuracy = \frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$accuracy = \frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
 </center>
 
 where
@@ -122,7 +122,7 @@ We also request the running time from your algorithm. We do not rank by running 
 
 ### Prizes
 
-The prizes for the winners are following. Please review the [rules]() for conditions to receive a prize.
+The prizes for the winners are following. Please review the [rules]() for terms and conditions to receive a prize.
 
 1. First place prize: $ 1000
 2. Second place prize: $ 500
