@@ -100,7 +100,7 @@ Remember we expect at most 4 lane markings in `lanes` (current lane and left/rig
 The evaluation formula is
 
 <center>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$accuracy = \frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$accuracy = \frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$accuracy = \frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$accuracy&space;=&space;\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$accuracy&space;=&space;\frac{\sum_{clip}&space;C_{clip}}{\sum_{clip}&space;S_{clip}}$$" title="$$accuracy = \frac{\sum_{clip} C_{clip}}{\sum_{clip} S_{clip}}$$" /></a>
 </center>
 
 where
@@ -110,10 +110,11 @@ where
 Based on the formula above, we will also compute the rate of false positive and false negative for your test results. False positive means the lane is predicted but not matched with any lane in ground-truth. False negative means the lane is in the ground-truth but not matched with any lane in the prediction. And the ranking will take all these metrics into account.
 
 <center>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$FP = \frac{F_{pred}}{N_{pred}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$FP = \frac{F_{pred}}{N_{pred}}" title="$$FP = \frac{F_{pred}}{N_{pred}}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$FP&space;=&space;\frac{F_{pred}}{N_{pred}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$FP&space;=&space;\frac{F_{pred}}{N_{pred}}$$" title="$$FP = \frac{F_{pred}}{N_{pred}}$$" /></a>
 </center>
+
 <center>
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$FN = \frac{M_{pred}}{N_{gt}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$FN = \frac{M_{pred}}{N_{gt}}" title="$$FN = \frac{M_{pred}}{N_{gt}}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$$FN&space;=&space;\frac{M_{pred}}{N_{gt}}$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$$FN&space;=&space;\frac{M_{pred}}{N_{gt}}$$" title="$$FN = \frac{M_{pred}}{N_{gt}}$$" /></a>
 </center>
 
 where <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$F_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$F_{pred}$" title="$F_{pred}$" /></a> is the number of wrong predicted lanes, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$N_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$N_{pred}$" title="$N_{pred}$" /></a> is the number of all predicted lanes. <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$M_{pred}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$M_{pred}$" title="$M_{pred}$" /></a> is the number of missed ground-truth lanes in the predictions, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;$N_{gt}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\inline&space;$N_{gt}$" title="$N_{gt}$" /></a> is the number of all ground-truth lanes.
