@@ -117,7 +117,7 @@ class VeloEval(object):
         pe1 = np.mean(np.array(pos_error[1]))
         pe2 = np.mean(np.array(pos_error[2]))
 
-        return json.dumps([{'EPNear': pe0}, {'EPMed': pe1}, {'EPFar': pe2}, {'EP': (pe0 + pe1 + pe2) / 3}, {'EVNear': ve0}, {'EVMed': ve1}, {'EVFar': ve2}, {'EV': (ve0 + ve1 + ve2) / 3}])
+        return json.dumps([ {'EV': (ve0 + ve1 + ve2) / 3}, {'EVNear': ve0}, {'EVMed': ve1}, {'EVFar': ve2}, {'EP': (pe0 + pe1 + pe2) / 3}, {'EPNear': pe0}, {'EPMed': pe1}, {'EPFar': pe2}])
 
 if __name__ == '__main__':
     import sys
