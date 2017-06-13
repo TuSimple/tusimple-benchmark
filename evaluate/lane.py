@@ -82,4 +82,16 @@ class LaneEval(object):
             fp += p
             fn += n
         num = len(gts)
-        return json.dumps({'Accuracy': accuracy / num, 'FP': fp / num, 'FN': fn / num})
+        # the first return parameter is the default ranking parameter
+        return json.dumps([{'Accuracy': accuracy / num}, {'FP': fp / num}, {'FN': fn / num}])
+
+
+if __name__ == '__main__':
+    import sys
+    try:
+        if len(sys.argv) != 3:
+            raise Exception('Invalid input arguments')
+        print LaneEval.bench_one_submit(sys.argv[1], sys.argv[2])
+    except Exception as e:
+        print e.message
+        sys.exit(e.message)

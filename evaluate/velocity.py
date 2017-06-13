@@ -6,7 +6,7 @@ class VeloEval(object):
     @staticmethod
     def load_json_file(file_list):
         data_list = []
-        for file_name in file_list: 
+        for file_name in file_list:
             with open(file_name) as f:
                 raw_data = json.load(f)
             data_list.append(raw_data)
@@ -24,7 +24,7 @@ class VeloEval(object):
                                               instance["bbox"]["right"]]])
                 data.append(instance)
             anno_list.append(data)
-        return anno_list                                  
+        return anno_list
 
     @staticmethod
     def load_annotation(file_list):
@@ -36,10 +36,10 @@ class VeloEval(object):
     @staticmethod
     def calc_error(a, b):
         try:
-            error = np.linalg.norm(np.array(a)-np.array(b)) ** 2
+            error = np.linalg.norm(np.array(a) - np.array(b)) ** 2
         except BaseException as e:
             raise Exception('Error data format')
-        return np.linalg.norm(np.array(a)-np.array(b)) ** 2
+        return np.linalg.norm(np.array(a) - np.array(b)) ** 2
 
     @staticmethod
     def get_distance_label(gt):
@@ -79,20 +79,20 @@ class VeloEval(object):
         print "Velocity Estimation error (Near): {0:.5f}".format(ve0)
         print "Velocity Estimation error (Medium): {0:.5f}".format(ve1)
         print "Velocity Estimation error (Far): {0:.5f}".format(ve2)
-        print "Velocity Estimation error total: {0: 5f}".format((ve0+ve1+ve2)/3)
+        print "Velocity Estimation error total: {0: 5f}".format((ve0 + ve1 + ve2) / 3)
         print "Position Estimation error (Near): {0:.5f}".format(pe0)
         print "Position Estimation error (Medium): {0:.5f}".format(pe1)
         print "Position Estimation error (Far): {0:.5f}".format(pe2)
-        print "Position Estimation error total: {0:.5f}".format((pe0+pe1+pe2)/3)
-        return (ve0+ve1+ve2)/3, (pe0+pe1+pe2)/3
-    
+        print "Position Estimation error total: {0:.5f}".format((pe0 + pe1 + pe2) / 3)
+        return (ve0 + ve1 + ve2) / 3, (pe0 + pe1 + pe2) / 3
+
     @staticmethod
     def bench_one_submit(pred_file, gt_file):
         try:
             with open(pred_file, 'r') as f:
                 json_pred = json.load(f)
             with open(gt_file, 'r') as f:
-                json_gt = json.load(f)    
+                json_gt = json.load(f)
         except BaseException as e:
             raise Exception('Fail to load json file of the prediction.')
         if len(json_gt) != len(json_pred):
@@ -109,7 +109,7 @@ class VeloEval(object):
                     raise Exception('Missing position or velocity')
                 pos_error[distance_label].append(VeloEval.calc_error(pred["position"], gt["position"]))
                 velo_error[distance_label].append(VeloEval.calc_error(pred["velocity"], gt["velocity"]))
-        
+
         ve0 = np.mean(np.array(velo_error[0]))
         ve1 = np.mean(np.array(velo_error[1]))
         ve2 = np.mean(np.array(velo_error[2]))
@@ -117,4 +117,14 @@ class VeloEval(object):
         pe1 = np.mean(np.array(pos_error[1]))
         pe2 = np.mean(np.array(pos_error[2]))
 
-        return json.dumps({'EPNear':pe0, 'EPMed':pe1, 'EPFar':pe2, 'EP':(pe0+pe1+pe2)/3, 'EVNear':ve0, 'EVMed':ve1, 'EVFar':ve2, 'EV':(ve0+ve1+ve2)/3})
+        return json.dumps([{'EPNear': pe0}, {'EPMed': pe1}, {'EPFar': pe2}, {'EP': (pe0 + pe1 + pe2) / 3}, {'EVNear': ve0}, {'EVMed': ve1}, {'EVFar': ve2}, {'EV': (ve0 + ve1 + ve2) / 3}])
+
+if __name__ == '__main__':
+    import sys
+    try:
+        if len(sys.argv) != 3:
+            raise Exception('Invalid input arguments')
+        print VeloEval.bench_one_submit(sys.argv[1], sys.argv[2])
+    except Exception as e:
+        print e.message
+        sys.exit(e.message)
