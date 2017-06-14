@@ -122,7 +122,7 @@ We also request the running time from your algorithm. We do not rank by running 
 
 ### Prizes
 
-The prizes for the winners are following. Please review the [rules]() for terms and conditions to receive a prize.
+The prizes for the winners are following. Please review the [rules](http://benchmark.tusimple.ai/#/term) for terms and conditions to receive a prize.
 
 1. First place prize: $ 1000
 2. Second place prize: $ 500
