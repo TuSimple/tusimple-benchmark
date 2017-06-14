@@ -164,7 +164,7 @@ We classifiy test vehicles by its relative distance to the camera into three cla
 
 In our evaluation code and leaderboard, the error of velocity estimation and error of position estimation is abbreviated as EV and EP respectively. 
 ### Prizes
-The prizes for the winners are following. Please review the [rules]() for conditions to receive a prize.
+The prizes for the winners are following. Please review the [rules](http://benchmark.tusimple.ai/#/term) for conditions to receive a prize.
 
 1. First place prize: $ 1000
 2. Second place prize: $ 500
