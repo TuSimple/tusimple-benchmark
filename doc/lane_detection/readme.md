@@ -77,7 +77,7 @@ For example,
   "raw_file": "path_to_clip"
 }
 ```
-`-2` in `lanes` means on some h_sample, there is no existing lane marking. The first existing point in the first lane is `(632, 240)`.
+`-2` in `lanes` means on some h_sample, there is no existing lane marking. The first existing point in the first lane is `(632, 280)`.
 
 
 ## Evaluation
