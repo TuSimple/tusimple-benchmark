@@ -55,7 +55,7 @@ class VeloEval(object):
     def find_nearest_gt(pred, x_gt):
         bboxes = np.vstack([x["bbox"] for x in x_gt])
         difference = np.sum(np.abs(np.subtract(bboxes, pred["bbox"])), axis=1)
-        if np.min(difference) > 5:
+        if np.min(difference) > 10:
             raise Exception('We do not get all the predictions for a certain frame')
         return x_gt[np.argmin(difference)]
 
