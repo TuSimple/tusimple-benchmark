@@ -19,7 +19,7 @@ Complexity:
 
 Dataset size:
 - Training: 3626 video clips, 3626 annotated frames
-- Testing: 2944 video clips
+- Testing: 2782 video clips
 
 Camera and video clip:
 - 1s clip of 20 frames
