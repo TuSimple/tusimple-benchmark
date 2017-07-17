@@ -94,7 +94,8 @@ __Format__
   'run_time': list of float. The running time for each frame in the clip. The unit is millisecond.
 }
 ```
-Remember we expect at most 4 lane markings in `lanes` (current lane and left/right lanes). Feel free to output either a extra left or right lane marking when changing lane. 
+Remember we expect at most 4 lane markings in `lanes` (current lane and left/right lanes). Feel free to output either a extra left or right lane marking when changing lane. We only accept that the number of submitted lanes is no larger than the number of ground-truth lanes plus 2. For example, if the number of lanes in the ground-truth for some image is 4 and you submit 7 lanes, the accuracy for this image is 0. So, please submit the most confident lanes. Besides, the number of lanes in
+ground-truth is mostly 4, some are 5.
 
 The evaluation formula is
 
