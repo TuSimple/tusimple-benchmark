@@ -29,7 +29,7 @@ class LaneEval(object):
     def bench(pred, gt, y_samples, running_time):
         if any(len(p) != len(y_samples) for p in pred):
             raise Exception('Format of lanes error.')
-        if running_time > 200 or len(gt) + 1 < len(pred):
+        if running_time > 200 or len(gt) + 2 < len(pred):
             return 0., 0., 1.
         angles = [LaneEval.get_angle(np.array(x_gts), np.array(y_samples)) for x_gts in gt]
         threshs = [LaneEval.pixel_thresh / np.cos(angle) for angle in angles]
